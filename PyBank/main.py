@@ -49,9 +49,30 @@ with open (bank_csv, newline="") as bankcsvfile:
 
         
                
-	#Display results
-	print(f"Total months: {monthCount}")
-	print(f"Total: {netTotal}")
-	print(f"Greatest Increase in Profits: {greatestProfitIncreaseMonth} (${greatestProfitIncreaseAmount})")
-	print(f"Greatest Decrease in Profits: {greatestProfitDecreaseMonth} (${greatestProfitDecreaseAmount})")
+#Display results to screen
+print(f"Total months: {monthCount}")
+print(f"Total: {netTotal}")
+print(f"Greatest Increase in Profits: {greatestProfitIncreaseMonth} (${greatestProfitIncreaseAmount})")
+print(f"Greatest Decrease in Profits: {greatestProfitDecreaseMonth} (${greatestProfitDecreaseAmount})")
        
+
+#Write results to text file
+	
+#path to output text file
+txt_output = os.path.join(".", "PyBank_text_output.txt")
+
+#Open file in write mode and specify variable to hold contents
+with open(txt_output, 'w', newline = "") as txt_file:
+	#initialize txt writer
+	txt_file.write(f"Total months: {monthCount}\n")
+	txt_file.write(f"Total: {netTotal}\n")
+	txt_file.write(f"Greatest Increase in Profits: {greatestProfitIncreaseMonth} (${greatestProfitIncreaseAmount})\n")
+	txt_file.write(f"Greatest Decrease in Profits: {greatestProfitDecreaseMonth} (${greatestProfitDecreaseAmount})\n")
+ 
+#Open file for writing (basic write)          
+#file = open("PyBank_output.txt","w")
+
+#file.write(f"Total months: {monthCount}")   
+#file.write(f"Total: {netTotal}")
+#file.write(f"Greatest Increase in Profits: {greatestProfitIncreaseMonth} (${greatestProfitIncreaseAmount})")
+#file.write(f"Greatest Decrease in Profits: {greatestProfitDecreaseMonth} (${greatestProfitDecreaseAmount})")
